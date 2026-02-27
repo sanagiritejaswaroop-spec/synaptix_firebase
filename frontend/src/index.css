@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-white antialiased;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Glassmorphism */
+.glass {
+  @apply bg-opacity-10 bg-white backdrop-blur-lg border border-white border-opacity-10;
+}
+
+.card-gradient {
+  background: linear-gradient(145deg, rgba(26, 29, 35, 1) 0%, rgba(21, 23, 27, 1) 100%);
+}
+
+.risk-alert {
+  @apply relative overflow-hidden;
+}
+
+.risk-alert::after {
+  content: '';
+  @apply absolute inset-0 opacity-10;
+  background: linear-gradient(90deg, transparent, white, transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
